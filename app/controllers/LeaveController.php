@@ -81,7 +81,7 @@ public function getAllLeave($id=null)
 
 
 /*
-	 1) Working : getAllLeave() use to retirve all leave request.
+	 1) Working : acceptLeave() use to accept leave request of user by admin.
 	 2) Author  : Sujeet Kumar
 	 3) Date    : 27/05/2015
    */	
@@ -102,7 +102,7 @@ public function acceptLeave($id=null)
 
 
 /*
-	 1) Working : getAllLeave() use to retirve all leave request.
+	 1) Working : rejectLeave() use to reject leave request of user by admin.
 	 2) Author  : Sujeet Kumar
 	 3) Date    : 27/05/2015
    */	

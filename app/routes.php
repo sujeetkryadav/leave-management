@@ -92,7 +92,13 @@ Route::get('/home', array('as'=>'home',function()
            
         ));
 }));
-  
+
+  /*
+   1) Working : route,if user successfully login then  redirect to home page.
+   2) Author  : Sujeet Kumar
+   3) Date    : 27/05/2015
+   */
+
   Route::get('/', function()
 {
   return View::make('layout.main', array(
@@ -127,10 +133,14 @@ Route::get('user-leave',array('as'=>'leave', function() {
             ));
     }));  
 
-
+/*
+   1) Working : Logout and distroy all session.
+   2) Author  : Sujeet Kumar
+   3) Date    : 27/05/2015
+   */
   Route::get('/logout', function() {
          Auth::logout();
-        
+
         return Redirect::route('login');
     });
 
@@ -143,8 +153,19 @@ Route::post('leave-application','LeaveController@applyLeave');
 
 Route::post('registration','UserController@addUser');
 
+//================================End of Regular user routes==========================================\\
+
+
+
+
+
 
 //------------All Admin routes-----------------------------//
+/*
+   1) Working : Admin login route .
+   2) Author  : Sujeet Kumar
+   3) Date    : 27/05/2015
+   */
 
 Route::post('admin-login', function() {
   $admin = array(
@@ -161,7 +182,11 @@ Route::post('admin-login', function() {
 }
 });
 
-
+/*
+   1) Working : open Admin  login page.
+   2) Author  : Sujeet Kumar
+   3) Date    : 27/05/2015
+   */
 Route::get('admin', array('as' => "admin", function() {
     return View::make('admin.layout.main', array(
         "page_title" => 'Project Management ',
@@ -172,7 +197,11 @@ Route::get('admin', array('as' => "admin", function() {
         "button" => ""
         ));
 }));
-
+/*
+   1) Working : Groups all Admin  route .
+   2) Author  : Sujeet Kumar
+   3) Date    : 27/05/2015
+   */
 Route::group(array('prefix' => 'admin', "before" => "admin_auth"), function() {
 
    Route::get('/',array('as'=>'admin-home', function() {

@@ -70,8 +70,9 @@ class Leave extends Eloquent implements UserInterface, RemindableInterface {
 		   }
       
 	}
+
 /*
-	 1) Working : getAllLeave() use to retirve all leave request.
+	 1) Working : acceptLeave() use to accept leave request of user by admin.
 	 2) Author  : Sujeet Kumar
 	 3) Date    : 27/05/2015
    */	
@@ -86,12 +87,13 @@ class Leave extends Eloquent implements UserInterface, RemindableInterface {
 		catch (Exception $e) {
 			   return 'false';
 		      }
-		}
+
 /*
-	 1) Working : getAllLeave() use to retirve all leave request.
+	 1) Working : rejectLeave() use to reject leave request of user by admin.
 	 2) Author  : Sujeet Kumar
 	 3) Date    : 27/05/2015
    */	
+
 public static function rejectLeave($id=null)
 		{  try {
 			   $leave=Leave::find($id);
