@@ -130,6 +130,7 @@ Route::get('user-leave',array('as'=>'leave', function() {
 
   Route::get('/logout', function() {
          Auth::logout();
+        
         return Redirect::route('login');
     });
 
@@ -146,7 +147,6 @@ Route::post('registration','UserController@addUser');
 //------------All Admin routes-----------------------------//
 
 Route::post('admin-login', function() {
-
   $admin = array(
             'email' => Input::get('userName'),
             'password' => Input::get('password')

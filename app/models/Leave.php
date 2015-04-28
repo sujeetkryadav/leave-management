@@ -70,7 +70,11 @@ class Leave extends Eloquent implements UserInterface, RemindableInterface {
 		   }
       
 	}
-
+/*
+	 1) Working : getAllLeave() use to retirve all leave request.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
 
 	public static function acceptLeave($id=null)
 		{  try {
@@ -83,7 +87,11 @@ class Leave extends Eloquent implements UserInterface, RemindableInterface {
 			   return 'false';
 		      }
 		}
-
+/*
+	 1) Working : getAllLeave() use to retirve all leave request.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
 public static function rejectLeave($id=null)
 		{  try {
 			   $leave=Leave::find($id);

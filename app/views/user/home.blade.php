@@ -2,6 +2,7 @@
 $obj=new LeaveController();
 $detail=$obj->getAllLeave(Auth::id());
 //print_r($detail);
+ 
 $i=1;
     /*--}}
     <div id="wrapper">
