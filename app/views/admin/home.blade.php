@@ -1,6 +1,6 @@
 {{--*/
 $obj=new LeaveController();
-$detail=$obj->getAllLeave(Auth::id());
+$detail=$obj->getAllLeave();
 //print_r($detail);
 $i=1;
     /*--}}
@@ -56,7 +56,7 @@ $i=1;
                                                         <th>Sr.No</th>
                                                          <th>Name</th>
                                                         <th>Reason</th>
-                                                        <th>Status</th>
+                                                        <th>Action</th>
                                                        
                                                     </tr>
                                                 </thead>
@@ -66,7 +66,10 @@ $i=1;
                                                         <td>{{$i}}</td>
                                                         <td> {{{$value->name}}}</td>
                                                         <td> {{{$value->comments}}}</td>
-                                                        <td> {{{$value->status}}}</td>
+                                                        <td style="width:100px"><div class="btn-group btn-group-xs">
+					<p><a href="admin/accept?id={{$value->id}}"><button type="button" class="btn btn-green">Accept</button></a></p>
+					<p><a href="admin/reject?id={{$value->id}}"><button type="button" class="btn btn-red">Reject</button></a></p>
+						            </div></td>
                                                        
                                                     </tr>
                                                     {{--*/ $i++; /*--}}

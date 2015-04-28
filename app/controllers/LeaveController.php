@@ -73,10 +73,53 @@ class LeaveController extends BaseController {
    */	
 
 
-public function getAllLeave()
+public function getAllLeave($id=null)
 {
-   $detail=Leave::getAllLeave();
+   $detail=Leave::getAllLeave($id);
    return $detail;
 }
+
+
+/*
+	 1) Working : getAllLeave() use to retirve all leave request.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
+
+
+public function acceptLeave($id=null)
+{
+   echo $reguestId=Input::get('id');
+   $status=Leave::acceptLeave($reguestId);
+   if($status=='true')
+   {
+     return Redirect::to('admin');
+   }else
+   {
+     return Redirect::to('admin')->withErrors($validator, 'msg');
+   }
+}
+
+
+/*
+	 1) Working : getAllLeave() use to retirve all leave request.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
+
+
+public function rejectLeave($id=null)
+{
+   echo $reguestId=Input::get('id');
+   $status=Leave::rejectLeave($reguestId);
+   if($status=='true')
+   {
+     return Redirect::to('admin');
+   }else
+   {
+     return Redirect::to('admin')->withErrors($validator, 'msg');
+   }
+}
+
 
 }

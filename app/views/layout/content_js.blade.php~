@@ -1,5 +1,5 @@
 <!-- GLOBAL SCRIPTS -->
-
+ 
     {{ HTML::script('/assests/js/plugins/bootstrap/bootstrap.min.js'); }}
     {{ HTML::script('/assests/js/plugins/slimscroll/jquery.slimscroll.min.js'); }}
     {{ HTML::script('/assests/js/plugins/popupoverlay/jquery.popupoverlay.js'); }}
@@ -72,4 +72,5 @@
     {{ HTML::script('/assests/js/plugins/fullcalendar/jquery-ui.custom.min.js'); }}
 {{ HTML::script('/assests/js/plugins/fullcalendar/fullcalendar.min.js'); }}
 {{ HTML::script('/assests/js/demo/calendar-demo.js'); }}
+
      

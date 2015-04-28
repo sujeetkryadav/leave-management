@@ -18,7 +18,7 @@
                     </div>
                     <div class="portlet-body">
                        
-                        {{Form::open(array('url' => 'login', 'method' => 'post'))}}
+                        {{Form::open(array('url' => 'admin-login', 'method' => 'post'))}}
                             <fieldset>
                                 <div class="form-group">
                                 {{Form::email('userName','',['class'=>'form-control','placeholder'=>'E-mail'])}}
@@ -33,7 +33,7 @@
 
 <!--                                 <input type="submit" class="btn btn-lg btn-green btn-block" value="Sign In">
  -->                             {{Form::close()}}
-                               <a href="signup" class="btn btn-lg btn-green btn-block"> New User</a>
+                              
                                </fieldset>
                             <br>
                             <p class="small">

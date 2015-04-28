@@ -48,16 +48,56 @@ class Leave extends Eloquent implements UserInterface, RemindableInterface {
    */	
 
 
-	public static function getAllLeave()
+	public static function getAllLeave($id=null)
 	{  try{
-		 $data=Leave::all();
-         return $data;
+		   if($id!=null)
+		  {  $data=DB::table('leaves')
+		              ->select('*')
+		              ->where('user_id', '=',$id)
+		              ->get();
+		           return $data;}
+		           else
+		           {
+		           	$data=DB::table('leaves')
+		              ->select('*')
+		              ->where('status', '=','pending')
+		              ->get();
+		           return $data;
+		           }
    		}catch(Exception $e)
 		   {
 
 		   }
       
 	}
+
+
+	public static function acceptLeave($id=null)
+		{  try {
+			   $leave=Leave::find($id);
+	           $leave->status='accepted';
+	           $leave->save();
+	           return 'true';
+		     } 
+		catch (Exception $e) {
+			   return 'false';
+		      }
+		}
+
+public static function rejectLeave($id=null)
+		{  try {
+			   $leave=Leave::find($id);
+	           $leave->status='rejected';
+	           $leave->save();
+	           return 'true';
+		     } 
+		catch (Exception $e) {
+			   return 'false';
+		      }
+		}
+
+
+
 
 
 }

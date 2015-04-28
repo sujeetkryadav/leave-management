@@ -33,7 +33,7 @@
 
 <!--                                 <input type="submit" class="btn btn-lg btn-green btn-block" value="Sign In">
  -->                             {{Form::close()}}
-                               <a href="signup" class="btn btn-lg btn-green btn-block"> New User</a>
+                              
                                </fieldset>
                             <br>
                             <p class="small">

@@ -141,3 +141,51 @@ Route::post('leave-application','LeaveController@applyLeave');
  });
 
 Route::post('registration','UserController@addUser');
+
+
+//------------All Admin routes-----------------------------//
+
+Route::post('admin-login', function() {
+
+  $admin = array(
+            'email' => Input::get('userName'),
+            'password' => Input::get('password')
+                  );
+    // Check Reviewers credential here
+  
+   if (Auth::attempt($admin)) {
+
+    return Redirect::route('admin-home')->with('notice', 'You are logged in successfully !');
+} else {
+    return Redirect::route('admin')->withErrors(array("msg" => "The User Name or Password is invalid. Please Try again."));
+}
+});
+
+
+Route::get('admin', array('as' => "admin", function() {
+    return View::make('admin.layout.main', array(
+        "page_title" => 'Project Management ',
+        "title" => 'login',
+        "flage" => 'test',
+        "page" => "admin.login",
+        "status" => "home",
+        "button" => ""
+        ));
+}));
+
+Route::group(array('prefix' => 'admin', "before" => "admin_auth"), function() {
+
+   Route::get('/',array('as'=>'admin-home', function() {
+
+        return View::make('admin.layout.main', array(
+            "page_title" => 'Project Management ',
+            "title" => '',
+            "flage" => 'test',       
+            "page" => "admin.home",
+            "status" => "home",
+            "button" => ""               
+            ));
+    }));  
+Route::get('accept','LeaveController@acceptLeave');
+Route::get('reject','LeaveController@rejectLeave');
+});
