@@ -30,25 +30,11 @@
                 <!-- begin MESSAGES/ALERTS/TASKS/USER ACTIONS DROPDOWNS -->
                 <ul class="nav navbar-right">
 
-                    <!-- begin MESSAGES DROPDOWN -->
                     <li class="dropdown">
-                        <a href="#" class="messages-link dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-envelope"></i>
-                            <span class="number">4</span> <i class="fa fa-caret-down"></i>
-                        </a>
                         <ul class="dropdown-menu dropdown-scroll dropdown-messages">
-
-                            <!-- Messages Dropdown Heading -->
-                            <li class="dropdown-header">
-                                <i class="fa fa-envelope"></i> 4 New Messages
-                            </li>
-
-                            <!-- Messages Dropdown Body - This is contained within a SlimScroll fixed height box. You can change the height using the SlimScroll jQuery features. -->
                             <li id="messageScroll">
                                 <ul class="list-unstyled">
                                    
-                                    
-                                
                                     <li>
                                         <a href="#">
                                             <div class="row">
@@ -69,10 +55,7 @@
                                 </ul>
                             </li>
 
-                            <!-- Messages Dropdown Footer -->
-                            <li class="dropdown-footer">
-                                <a href="mailbox.html">Read All Messages</a>
-                            </li>
+
 
                         </ul>
                         <!-- /.dropdown-menu -->
@@ -82,89 +65,13 @@
 
                     <!-- begin ALERTS DROPDOWN -->
                     <li class="dropdown">
-                        <a href="#" class="alerts-link dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell"></i> 
-                            <span class="number">9</span><i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-scroll dropdown-alerts">
-
-                            <!-- Alerts Dropdown Heading -->
-                            <li class="dropdown-header">
-                                <i class="fa fa-bell"></i> 9 New Alerts
-                            </li>
-
-                            <!-- Alerts Dropdown Body - This is contained within a SlimScroll fixed height box. You can change the height using the SlimScroll jQuery features. -->
-                            <li id="alertScroll">
-                                <ul class="list-unstyled">
-                                 
-                                    <li>
-                                        <a href="#">
-                                            <div class="alert-icon red pull-left">
-                                                <i class="fa fa-bolt"></i>
-                                            </div>
-                                            Server #8 Crashed
-                                            <span class="small pull-right">
-                                                <strong>
-                                                    <em>12 hours ago</em>
-                                                </strong>
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <!-- Alerts Dropdown Footer -->
-                            <li class="dropdown-footer">
-                                <a href="#">View All Alerts</a>
-                            </li>
-
-                        </ul>
-                        <!-- /.dropdown-menu -->
-                    </li>
+                       
+                        
                     <!-- /.dropdown -->
                     <!-- end ALERTS DROPDOWN -->
 
                     <!-- begin TASKS DROPDOWN -->
-                    <li class="dropdown">
-                        <a href="#" class="tasks-link dropdown-toggle" data-toggle=dropdown>
-                            <i class="fa fa-tasks"></i> 
-                            <span class=number>10</span><i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-scroll dropdown-tasks">
-
-                            <!-- Tasks Dropdown Header -->
-                            <li class="dropdown-header">
-                                <i class="fa fa-tasks"></i> 10 Pending Tasks
-                            </li>
-
-                            <!-- Tasks Dropdown Body - This is contained within a SlimScroll fixed height box. You can change the height using the SlimScroll jQuery features. -->
-                            <li id="taskScroll">
-                                <ul class="list-unstyled">
-                                 
-                                    <li>
-                                        <a href="#">
-                                            <p>
-                                                New Employee Intake
-                                                <span class="pull-right">
-                                                    <strong>98%</strong>
-                                                </span>
-                                            </p>
-                                            <div class="progress progress-striped active">
-                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <!-- Tasks Dropdown Footer -->
-                            <li class="dropdown-footer">
-                                <a href="#">View All Tasks</a>
-                            </li>
-
-                        </ul>
-                        <!-- /.dropdown-menu -->
-                    </li>
+                    
                     <!-- /.dropdown -->
                     <!-- end TASKS DROPDOWN -->
 
@@ -176,11 +83,7 @@
                         <ul class="dropdown-menu dropdown-user">
                          
                             <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-gear"></i> Settings
-                                </a>
-                            </li>
+                           
                             <li>
                                 <a class="logout_open" href="#logout">
                                     <i class="fa fa-sign-out"></i> Logout

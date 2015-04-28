@@ -23,13 +23,41 @@ class Leave extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+
+   /*
+	 1) Working : applyLeave() use to add all leave request.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */
 	public static function applyLeave($data)
 	{    try {
 		$data->save();
 	         } 
 	       catch (Exception $e) {
-		        print_r($e);
+		       print_r($e);
 	         }
 		
     }
+
+
+
+/*
+	 1) Working : getAllLeave() use to retirve all leave request.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
+
+
+	public static function getAllLeave()
+	{  try{
+		 $data=Leave::all();
+         return $data;
+   		}catch(Exception $e)
+		   {
+
+		   }
+      
+	}
+
+
 }

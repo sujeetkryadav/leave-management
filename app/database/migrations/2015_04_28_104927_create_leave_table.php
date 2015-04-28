@@ -16,6 +16,10 @@ class CreateLeaveTable extends Migration {
         {
         $table->increments('id');
         $table->string('user_id');
+        $table->string('contact');
+        $table->string('name');
+        $table->string('from');
+        $table->string('to');
         $table->string('status');
         $table->string('comments');
         $table->timestamps();

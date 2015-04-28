@@ -16,22 +16,24 @@ class LeaveController extends BaseController {
 	*/
 
 	/*
-	 1) Working : addUser() use to save user into database.
+	 1) Working : applyLeave() use to save user into database.
 	 2) Author  : Sujeet Kumar
 	 3) Date    : 27/05/2015
    */	
 
 	public function applyLeave()
 	{
+
+		try{
 		$data=Input::all();
-		print_r($data);
-		$user = new User;
+		//print_r($data);
+		$leave = new Leave;
 	    $rules = array(
-                'userName' => 'Required|max:15',
-                'email' => 'Required|max:150|unique:users,email',
-                'contact' => 'Required|max:15',
-                'dob' => 'Required',
-                'password' => 'Required',
+                'name' => 'Required|max:15',
+                'phone' => 'Required|max:15',
+                'startDate' => 'Required',
+                'endDate' => 'Required',
+                'notes'=>'Required'
                 
             ); // creating rule for  validation
 
@@ -39,23 +41,42 @@ class LeaveController extends BaseController {
 
 			       if ($validator->passes()) {
                     
-				    $user->name =$data['userName'];
-					$user->email =$data['email'];
-					$user->contact =$data['contact'];
-					$user->dob =$data['dob'];
-					$user->password =Hash::make($data['password']);
-					$user->remember_token=Hash::make(date("Yhmids") . uniqid());
-					$user->status =0;
-		            $user->addUser($user);
-			       	return Redirect::to('/home')->with('message','User successfully added--!');
-			                        }
+				    $leave->name =$data['name'];
+					$leave->user_id =Auth::id();
+					$leave->contact =$data['phone'];
+					$leave->from =$data['startDate'];
+					$leave->to =$data['endDate'];
+					$leave->status ="pending";
+					$leave->comments =$data['notes'];
 
+		            $leave->applyLeave($leave);
+
+			       	return Redirect::to('/user-leave')->with('message','User successfully added--!');
+			                        }
 			     else
 			          {
-			        return Redirect::to('signup')->withErrors($validator, 'msg');
+			        return Redirect::to('user-leave')->withErrors($validator, 'msg');
 			          }
-		
-	             }
+	                
+	          }
+	         catch(Exception $e)
+	         {
+	         	 return Redirect::to('user-leave')->withErrors($validator, 'msg');
+	          }
 
+}
+
+/*
+	 1) Working : getAllLeave() use to retirve all leave request.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
+
+
+public function getAllLeave()
+{
+   $detail=Leave::getAllLeave();
+   return $detail;
+}
 
 }

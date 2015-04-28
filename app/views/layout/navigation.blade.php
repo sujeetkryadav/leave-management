@@ -37,13 +37,9 @@
                             <i class="fa fa-dashboard"></i> Leave Application
                         </a>
                     </li>
+                     
                      <li>
-                        <a class="active" href="index.html">
-                            <i class="fa fa-bell"></i> General Notice Board
-                        </a>
-                    </li>
-                     <li>
-                        <a class="active" href="index.html">
+                        <a class="active" href="/">
                             <i class="fa fa-clipboard"></i> Leave Status
                         </a>
                     </li>

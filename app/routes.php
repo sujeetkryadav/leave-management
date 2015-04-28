@@ -136,7 +136,7 @@ Route::get('user-leave',array('as'=>'leave', function() {
 //------------All post routes-----------------------------//
 
 
-
+Route::post('leave-application','LeaveController@applyLeave');
 
  });
 

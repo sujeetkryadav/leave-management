@@ -1,4 +1,8 @@
-
+{{--*/
+$obj=new LeaveController();
+$detail=$obj->getAllLeave();
+$i=1;
+    /*--}}
     <div id="wrapper">
         <div id="page-wrapper">
 
@@ -36,7 +40,7 @@
 
                 <!-- begin DASHBOARD CIRCLE TILES -->
                 <div class="row">
-            
+  
                     <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-12">
                         <div class="portlet portlet-default">
@@ -49,40 +53,31 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Sr.No</th>
-                                                        <th>Notice</th>
-                                                        <th></th>
+                                                         <th>Name</th>
+                                                        <th>Reason</th>
+                                                        <th>Status</th>
                                                        
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach($detail as $value)
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>Setup fee for the hosting package purchased on 12/19/13.</td>
-                                                        <td></td>
+                                                        <td>{{$i}}</td>
+                                                        <td> {{{$value->name}}}</td>
+                                                        <td> {{{$value->comments}}}</td>
+                                                        <td> {{{$value->status}}}</td>
+                                                       
                                                     </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Setup fee for the hosting package purchased on 12/19/13.</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Setup fee for the hosting package purchased on 12/19/13.</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>Setup fee for the hosting package purchased on 12/19/13.</td>
-                                                        <td></td>
-                                                    </tr>
+                                                    {{--*/ $i++; /*--}}
+                                                    @endforeach
                                                 
                                                 </tbody>
 
                                             </table>
-                                            <div class="" align="right">
+                                            <!-- <div class="" align="right">
                                             <a class="btn btn-xs btn-green" href="#"><i class="fa fa-arrow-circle-right"></i> View more</a>
                                             
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <!-- /.table-responsive -->
                                     </div>
