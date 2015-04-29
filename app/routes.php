@@ -170,7 +170,8 @@ Route::post('registration','UserController@addUser');
 Route::post('admin-login', function() {
   $admin = array(
             'email' => Input::get('userName'),
-            'password' => Input::get('password')
+            'password' => Input::get('password'),
+            'role'=>'admin'
                   );
     // Check Reviewers credential here
   
@@ -178,7 +179,7 @@ Route::post('admin-login', function() {
 
     return Redirect::route('admin-home')->with('notice', 'You are logged in successfully !');
 } else {
-    return Redirect::route('admin')->withErrors(array("msg" => "The User Name or Password is invalid. Please Try again."));
+    return Redirect::route('admin-login')->withErrors(array("msg" => "The User Name or Password is invalid. Please Try again."));
 }
 });
 
@@ -187,9 +188,9 @@ Route::post('admin-login', function() {
    2) Author  : Sujeet Kumar
    3) Date    : 27/05/2015
    */
-Route::get('admin', array('as' => "admin", function() {
+Route::get('admin/login', array('as' => "admin-login", function() {
     return View::make('admin.layout.main', array(
-        "page_title" => 'Project Management ',
+        "page_title" => 'Leave Management',
         "title" => 'login',
         "flage" => 'test',
         "page" => "admin.login",
@@ -207,7 +208,7 @@ Route::group(array('prefix' => 'admin', "before" => "admin_auth"), function() {
    Route::get('/',array('as'=>'admin-home', function() {
 
         return View::make('admin.layout.main', array(
-            "page_title" => 'Project Management ',
+            "page_title" => 'Leave Management',
             "title" => '',
             "flage" => 'test',       
             "page" => "admin.home",

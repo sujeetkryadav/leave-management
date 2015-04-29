@@ -1,8 +1,10 @@
 {{--*/
+$user_obj=new UserController();
+$userData=$user_obj->getUser(Auth::id());
+//print_r();
 $obj=new LeaveController();
 $detail=$obj->getAllLeave(Auth::id());
-//print_r($detail);
- 
+//print_r($detail); 
 $i=1;
     /*--}}
     <div id="wrapper">
@@ -15,8 +17,9 @@ $i=1;
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="page-title">
-                            <h1>Welcome
+                            <h1>Welcome {{$userData->name}}
                                 <small></small>
+                           
                             </h1>
                             <ol class="breadcrumb">
                                 <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>

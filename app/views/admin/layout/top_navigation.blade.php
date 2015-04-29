@@ -1,3 +1,7 @@
+{{--*/
+$user_obj=new UserController();
+$userData=$user_obj->getUser(Auth::id());
+/*--}}
  <!-- begin TOP NAVIGATION -->
         <nav class="navbar-top" role="navigation">
 
@@ -61,7 +65,7 @@
                             <li>
                                 <a class="logout_open" href="#logout">
                                     <i class="fa fa-sign-out"></i> Logout
-                                    <strong>John Smith</strong>
+                                    <strong>{{$userData->name}}</strong>
                                 </a>
                             </li>
                         </ul>

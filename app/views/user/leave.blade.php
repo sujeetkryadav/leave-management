@@ -63,12 +63,25 @@
                                                                  {{Form::text('phone','',['class'=>'form-control','placeholder'=>'Name','required','pattern'=>'[0-9]{10}'])}}
                                                             </div>
                                                             <div class="form-group">
+                                                                <label>Leave for </label>
+                                                                <select class="form-control" id="days">
+                                                                <option value="1">1 day</option>
+                                                                <option value="2">2 day</option>
+                                                                <option value="3">3 day</option>
+                                                                <option value="4">4 day</option>
+                                                                <option value="5">5 day</option>
+                                                                <option value="6">6 day</option>
+                                                                <option value="7">7 day</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group">
                                                                 <label>From</label>
                                                                  {{Form::text('startDate','',['class'=>'form-control','placeholder'=>'Select date','id'=>'popupDatepicker','required'])}}
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>To</label>
-                                                                 {{Form::text('endDate','',['class'=>'form-control','placeholder'=>'Select date','id'=>'popupDatepicker1','required'])}}
+                                                                 {{Form::text('endDate','',['class'=>'form-control','placeholder'=>'Select date','id'=>'popupDatepicker1','required' ,'disabled'])}}
                                                             </div>
                                                            <div class="form-group">
                                                                 <label>Reasoon</label>
@@ -114,8 +127,14 @@
 
              <script type="text/javascript">
                       $(function() {
-                  $('#popupDatepicker').datepick({yearRange: "1900:-18" });
-                  $('#popupDatepicker1').datepick({yearRange: "1900:-18" });
+                  $('#popupDatepicker').datepick({yearRange: "1900:-18" ,onSelect: validate });
+                  $('#popupDatepicker1').datepick({yearRange: "1900:-18"});
                         });
-
+                    function validate()
+                    { var days=document.getElementById("days").value;
+                      var first=document.getElementById("popupDatepicker").value;
+                      var second=document.getElementById("popupDatepicker1").value;
+                      alert(days);
+                        }
                      </script>
+                    

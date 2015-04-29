@@ -32,4 +32,23 @@ protected $fillable = array('name', 'dob','contact','role','email', 'password');
 	         }
 		
     }
+
+
+     public static function getUser($id=null)
+     {   try
+     	{ if($id!=null)
+     	  {$user=User::find($id);
+     	  return $user;
+     	 }
+     	  else
+     	  {
+     	   $user=User::all();
+     	  return $user;
+     	  }
+     	}
+     	catch(Exception $e)
+     	{
+
+     	}
+     }
 }

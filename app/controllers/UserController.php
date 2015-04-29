@@ -58,4 +58,19 @@ class UserController extends BaseController {
 	             }
 
 
+
+   
+	/*
+	 1) Working : addUser() use to save user into database.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
+
+    public function getUser($id=null)
+    { $user=new User;
+       $userDetail=$user->getUser($id);
+       return $userDetail;
+      
+    }
+
 }
