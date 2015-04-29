@@ -1,7 +1,7 @@
 # leave-management
 ## Installation
 ###  **step 1:** 
-     clone the project in your /usr/share/nginx/html/ by using git clone command.
+     clone the project in your /usr/share/nginx/html/ 
      by using git clone https://github.com/sujeetkryadav/leave-management.git
      and update composer using "composer update" command . After composer update run 
     " php artisan dump-autoload" command.
