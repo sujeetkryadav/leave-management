@@ -39,7 +39,7 @@
                                </fieldset>
                             <br>
                             <p class="small">
-                                <a href="#">Forgot your password?</a>
+                                
                             </p>
                        
                     </div>
