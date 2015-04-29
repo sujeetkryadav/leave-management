@@ -17,7 +17,9 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="portlet-body">
-                       
+                        @if(Session::get('msg')!='')
+                            <div class="alert alert-danger" id="danger">{{{Session::get('msg')}}}</div>
+                          @endif 
                         {{Form::open(array('url' => 'admin-login', 'method' => 'post'))}}
                             <fieldset>
                                 <div class="form-group">

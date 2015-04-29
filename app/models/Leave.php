@@ -53,15 +53,15 @@ class Leave extends Eloquent implements UserInterface, RemindableInterface {
 		   if($id!=null)
 		  {  $data=DB::table('leaves')
 		              ->select('*')
-		              ->where('user_id', '=',$id)
-		              ->get();
+		              ->where('user_id', '=',$id)->paginate(5);
+
 		           return $data;}
 		           else
 		           {
 		           	$data=DB::table('leaves')
 		              ->select('*')
-		              ->where('status', '=','pending')
-		              ->get();
+		              ->where('status', '=','pending')->paginate(5);
+		              
 		           return $data;
 		           }
    		}catch(Exception $e)

@@ -33,13 +33,13 @@
                         </a>
                     </li> -->
                      <li>
-                        <a class="active" href="leave-request">
+                        <a class="active" href="/admin">
                             <i class="fa fa-dashboard"></i> Leave Request
                         </a>
                     </li>
                      
                      <li>
-                        <a class="active" href="users">
+                        <a class="active" href="/admin/users">
                             <i class="fa fa-clipboard"></i> User List
                         </a>
                     </li>

@@ -25,10 +25,10 @@ Route::post('login', function() {
               }
            else{
              Session::flush();
-            return Redirect::route('login')->withErrors(array("msg" => "The User Name or Password is invalid. Please Try again."));
+            return Redirect::route('login')->with("msg" , "The User Name or Password is invalid.");
             }
-      } else {exit('sdf');
-        return Redirect::route('login')->withErrors(array("msg" => "The User Name or Password is invalid. Please Try again."));
+      } else {
+        return Redirect::route('login')->with("msg" , "The User Name or Password is invalid.");
     }
 });
 
@@ -179,7 +179,7 @@ Route::post('admin-login', function() {
 
     return Redirect::route('admin-home')->with('notice', 'You are logged in successfully !');
 } else {
-    return Redirect::route('admin-login')->withErrors(array("msg" => "The User Name or Password is invalid. Please Try again."));
+    return Redirect::route('admin-login')->with("msg" , "The User Name or Password is invalid. ");
 }
 });
 
@@ -216,6 +216,19 @@ Route::group(array('prefix' => 'admin', "before" => "admin_auth"), function() {
             "button" => ""               
             ));
     }));  
+
+    Route::get('users',array('as'=>'user', function() {
+
+        return View::make('admin.layout.main', array(
+            "page_title" => 'Leave Management',
+            "title" => '',
+            "flage" => 'test',       
+            "page" => "admin.user",
+            "status" => "home",
+            "button" => ""               
+            ));
+    }));  
 Route::get('accept','LeaveController@acceptLeave');
 Route::get('reject','LeaveController@rejectLeave');
+Route::get('delete','UserController@deleteUser');
 });

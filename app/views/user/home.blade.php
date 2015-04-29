@@ -61,6 +61,8 @@ $i=1;
                                                          <th>Name</th>
                                                         <th>Reason</th>
                                                         <th>Status</th>
+                                                        <th>From</th>
+                                                        <th>To</th>
                                                        
                                                     </tr>
                                                 </thead>
@@ -69,8 +71,10 @@ $i=1;
                                                     <tr>
                                                         <td>{{$i}}</td>
                                                         <td> {{{$value->name}}}</td>
-                                                        <td> {{{$value->comments}}}</td>
+                                                        <td style="width:200px;"> {{{$value->comments}}}</td>
                                                         <td> {{{$value->status}}}</td>
+                                                        <td> {{{$value->from}}}</td>
+                                                        <td> {{{$value->to}}}</td>
                                                        
                                                     </tr>
                                                     {{--*/ $i++; /*--}}
@@ -79,7 +83,7 @@ $i=1;
                                                 </tbody>
 
                                             </table>
-                                           
+                                           {{$detail->links()}}
                                         </div>
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 {{--*/
-$obj=new LeaveController();
-$detail=$obj->getAllLeave();
+$obj=new UserController();
+$detail=$obj->getUser();
 //print_r($detail);
 $i=1;
     /*--}}
@@ -56,8 +56,6 @@ $i=1;
                                                         <th>Sr.No</th>
                                                          <th>Name</th>
                                                         <th>Reason</th>
-                                                        <th>From</th>
-                                                        <th>To</th>
                                                         <th>Action</th>
                                                        
                                                     </tr>
@@ -67,23 +65,20 @@ $i=1;
                                                     <tr>
                                                         <td>{{$i}}</td>
                                                         <td> {{{$value->name}}}</td>
-                                                        <td> {{{$value->comments}}}</td>
-                                                        <td> {{{$value->from}}}</td>
-                                                        <td> {{{$value->to}}}</td>
-                                                        <td style="width:100px"><div class="btn-group btn-group-xs">
-					<p><a href="admin/accept?id={{$value->id}}"><button type="button" class="btn btn-green">Accept</button></a></p>
-					<p><a href="admin/reject?id={{$value->id}}"><button type="button" class="btn btn-red">Reject</button></a></p>
-						            </div></td>
+                                                        <td> {{{$value->dob}}}</td>
+                                                        <td >
+					
+					<p><a href="/admin/delete?id={{$value->id}}"><button type="button" class="btn btn-red">Delete</button></a></p>
+						            </td>
                                                        
                                                     </tr>
                                                     {{--*/ $i++; /*--}}
                                                     @endforeach
                                                 
                                                 </tbody>
-
+                                               
                                             </table>
-                                           {{$detail->links()}}
-                                        </div>
+                                         {{$detail->links()}}
                                     </div>
                                 </div>
                             </div>

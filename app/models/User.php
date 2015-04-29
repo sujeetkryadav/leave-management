@@ -22,7 +22,11 @@ protected $fillable = array('name', 'dob','contact','role','email', 'password');
 	 * @var array
 	 */
 	protected $hidden = array('password', 'remember_token');
-
+/*
+	 1) Working : addUser() use to save user into database.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
 	public static function addUser($data)
 	{    try {
 		$data->save();
@@ -33,7 +37,11 @@ protected $fillable = array('name', 'dob','contact','role','email', 'password');
 		
     }
 
-
+/*
+	 1) Working : getUser() use to retrive user from database.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
      public static function getUser($id=null)
      {   try
      	{ if($id!=null)
@@ -42,7 +50,7 @@ protected $fillable = array('name', 'dob','contact','role','email', 'password');
      	 }
      	  else
      	  {
-     	   $user=User::all();
+     	   $user=User::paginate(5);
      	  return $user;
      	  }
      	}
@@ -51,4 +59,27 @@ protected $fillable = array('name', 'dob','contact','role','email', 'password');
 
      	}
      }
+/*
+	 1) Working : delete() use to remove user from database.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
+
+  public static function deleteUser($id)
+  {
+  	 try
+     	{ if($id!=null)
+     	  {
+     	  	$user=User::find($id);
+     	   $user->delete();
+     	   return "true";
+     	 }
+     	  
+     	}
+     	catch(Exception $e)
+     	{
+
+     	}
+  }
+
 }

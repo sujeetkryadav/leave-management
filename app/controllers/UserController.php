@@ -24,7 +24,7 @@ class UserController extends BaseController {
 	public function addUser()
 	{
 		$data=Input::all();
-		print_r($data);
+		//print_r($data);
 		$user = new User;
 	    $rules = array(
                 'userName' => 'Required|max:15',
@@ -61,7 +61,7 @@ class UserController extends BaseController {
 
    
 	/*
-	 1) Working : addUser() use to save user into database.
+	 1) Working : getUser() use to retrive user from database.
 	 2) Author  : Sujeet Kumar
 	 3) Date    : 27/05/2015
    */	
@@ -71,6 +71,20 @@ class UserController extends BaseController {
        $userDetail=$user->getUser($id);
        return $userDetail;
       
+    }
+
+
+    /*
+	 1) Working : delete() use to remove user from database.
+	 2) Author  : Sujeet Kumar
+	 3) Date    : 27/05/2015
+   */	
+
+    public function deleteUser($id=null)
+    {  $id=Input::get('id');
+    	$user=new User;
+      $flage=$user->deleteUser($id);
+      return Redirect::to('admin/users')->with('message','User successfully deleted--!');
     }
 
 }

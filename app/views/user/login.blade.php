@@ -17,18 +17,19 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="portlet-body">
-                       
+                         @if(Session::get('msg')!='')
+                            <div class="alert alert-danger" id="danger">{{{Session::get('msg')}}}</div>
+                          @endif                         
                         {{Form::open(array('url' => 'login', 'method' => 'post'))}}
                             <fieldset>
                                 <div class="form-group">
                                 {{Form::email('userName','',['class'=>'form-control','placeholder'=>'E-mail'])}}
-                                    <!-- <input class="form-control" placeholder="E-mail" name="userName" type="text"> -->
+                                                  
                             
                                 </div>
                                 <div class="form-group">
                                  {{Form::password('password',['class'=>'form-control','placeholder'=>'password'])}}
-<!--                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
- -->                                </div>
+                                @if ($errors->msg->has('password')) <label for="inputNmae" ><span><p>{{{ $errors->msg->first('password') }}}</p> </span></label>@endif                          </div>
                                   {{Form::input('submit','submit','Sign In',['class'=>'btn btn-lg btn-green btn-block'])}}
 
 <!--                                 <input type="submit" class="btn btn-lg btn-green btn-block" value="Sign In">

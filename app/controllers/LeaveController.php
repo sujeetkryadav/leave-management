@@ -51,7 +51,7 @@ class LeaveController extends BaseController {
 
 		            $leave->applyLeave($leave);
 
-			       	return Redirect::to('/user-leave')->with('message','User successfully added--!');
+			       	return Redirect::to('/user-leave')->with('message','Applied for leave successfully..!');
 			                        }
 			     else
 			          {
@@ -89,7 +89,7 @@ public function getAllLeave($id=null)
 
 public function acceptLeave($id=null)
 {
-   echo $reguestId=Input::get('id');
+    $reguestId=Input::get('id');
    $status=Leave::acceptLeave($reguestId);
    if($status=='true')
    {
@@ -110,7 +110,7 @@ public function acceptLeave($id=null)
 
 public function rejectLeave($id=null)
 {
-   echo $reguestId=Input::get('id');
+    $reguestId=Input::get('id');
    $status=Leave::rejectLeave($reguestId);
    if($status=='true')
    {
