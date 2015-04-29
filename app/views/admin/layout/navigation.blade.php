@@ -5,7 +5,7 @@
                 <ul id="side" class="nav navbar-nav side-nav">
                     <!-- begin SIDE NAV USER PANEL -->
                     <li class="side-user hidden-xs">
-                        {{ HTML::image('assests/img/profile-pic.jpg') }}
+                        {{ HTML::image('assests/img/profile.png') }}
                         
                        
                         <div class="clearfix"></div>
