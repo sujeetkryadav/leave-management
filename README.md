@@ -6,7 +6,7 @@
      and update composer using "composer update" command . After composer update run 
     " php artisan dump-autoload" command.
 ### **step 2:**
-      After successfull installation ,create a Database Test and run migration command.
+      After successfull installation ,create a Database "test" and run migration command.
       php artisan migrate
 ### **step 3:**
       After migration you need to seed the user table in which Admin will be automatically 
